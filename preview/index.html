@@ -17,7 +17,7 @@
         <script type="text/javascript">
             const map = L.map('map').setView([0, 0], 0);
 
-            const p = new pmtiles.PMTiles("http://localhost:8077/my_area.pmtiles")
+            const p = new pmtiles.PMTiles("https://ctrepka.github.io/my_area.pmtiles")
             p.getHeader().then(h => {
                 let layer = pmtiles.leafletRasterLayer(p, {
                     maxzoom:h.maxZoom,
