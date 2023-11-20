@@ -1,5 +1,5 @@
 ## Preview Maptiles
-You can preview the resulting maptiles and MVT style.json in this repo here:
+You can preview the resulting maptiles and MVT style.json in this repo at the link below. **NOTE**: Due to Github LFS limitations, I decided to limit the footprint of the tiles the area of Austin, TX. This was done to enable hosting on GitHub Pages.
 
 [Preview Maptiles as hosted on Github Pages](https://ctrepka.github.io/pmtiles_basemaps/preview)
 
