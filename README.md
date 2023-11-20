@@ -15,11 +15,14 @@ simple to create from a source of vector data. In this case, open streetmaps are
 of the HTTP Byte Range request header to select only a portion of a binary blob on a CDN. This effectively provides a "serverless" hosting solution
 for hosting scalable Mapbox Vector Tiles with little effort and very low costs, especially when using a cloud provider with zero egrees fees.
 
-## Extract pmtiles area
+## Do it yourself
+You can simple clone this repository and pull your own tiles using the command below. You will need to download and install the pmtiles CLI tool.
+
+### Extract pmtiles area
 `pmtiles extract <tile_src_url> <output_name>.pmtiles --bbox=<bbox_coordinates>`
 
-### Tile source used
+#### Tile source used
 https://build.protomaps.com/20231001.pmtiles
 
-### Bbox coordinates used
+#### Bbox coordinates used
 -98.20541,30.79963,-97.24411,29.90493
