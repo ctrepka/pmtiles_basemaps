@@ -14,8 +14,12 @@
             }
         </style>
     </head>
-    <body>
+    <body style="display: grid; grid-template-columns: 2fr 1fr; height: 100vh; width: 100vw; max-height: 100vh; max-width: 100vw;">
         <div id="map"></div>
+        <div id="displayFeatures" style="height: 100%; overflow-y: scroll; padding: 4px;">
+          <h2>Selected Features</h2>
+          <div id="featuresList"></div>
+        </div>
         <script type="text/javascript">
             // add the PMTiles plugin to the maplibregl global.
             let protocol = new pmtiles.Protocol();
@@ -3261,8 +3265,21 @@
 ]
                     }
                 });
-                //map.showTileBoundaries = true;
-            })
+                map.showTileBoundaries = true;
+                map.on("load", (e) => {
+                  map.on("click", e => {
+                    const features = map.queryRenderedFeatures(e.point);
+                    const displayFeatures = features.map(f => {
+                      let attrs = {type: f.type, properties: f.properties}
+                      
+                      return attrs
+                    })
+                    console.log(features)
+                    document.getElementById('featuresList').innerHTML = JSON.stringify(displayFeatures, null, "\t")
+                  })
+                })
+                })
+
         </script>
     </body>
 </html>
